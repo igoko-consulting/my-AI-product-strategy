@@ -27,8 +27,8 @@
 **What you capture today:** aggregate delay and cancellation frequency by airline, route, and hotel property.<br>
 **How it compounds:** weakest loop by nature here. It's a supplier-reliability signal, not a direct user-to-user network effect. Grows the pie slowly, not the moat.
 
-**Total Flywheel Score: 12/20**
-**Weakest Loop:** Network
+**Total Flywheel Score: 12/20** <br>
+**Weakest Loop:** Network <br>
 **Fix for weakest loop:** stop treating this as a purely reactive signal. Surface supplier-risk warnings at the point of booking, before a disruption happens, so aggregate data creates value for every user upfront, not just for the ones who happen to get hit.
 
 
