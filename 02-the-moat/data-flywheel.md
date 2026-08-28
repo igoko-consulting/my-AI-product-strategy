@@ -4,33 +4,33 @@
 > The four loops below are the M2 starting point - adapt if your product has 2 or 6 loops instead of 4.
 
 ## Flywheel Loops
+| Loop | What It Measures | Score 1 | Score 5 | Score | How does the signal change future experience |
+|------|------------------|---------|---------|-------|-----------------------------------------------|
+| **Correction** | Do users fix AI outputs? Is that signal captured and reused? | No capture | Automated retraining | 3/5 | Accept/reject/override on rebooking options sharpens the ranking model, fewer bad suggestions next disruption |
+| **Preference** | Does the product learn individual / team preferences over time? | Stateless | Deep personalization | 4/5 | Past bookings and rebooking choices narrow future options to what this traveler actually accepts |
+| **Domain Context** | Does usage in one area improve quality in adjacent areas? | Siloed | Cross-domain transfer | 3/5 | Urgency and cost-tolerance patterns learned on flights carry over to hotel and ground transport disruptions |
+| **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 2/5 | More users on a route means better prediction of which suppliers to flag as risky, before the next traveler books |
 
-| Loop | What It Measures | Score 1 | Score 5 | Score |
-|------|------------------|---------|---------|-------|
-| **Correction** | Do users fix AI outputs? Is that signal captured and reused? | No capture | Automated retraining | __/5 |
-| **Preference** | Does the product learn individual / team preferences over time? | Stateless | Deep personalization | __/5 |
-| **Domain Context** | Does usage in one area improve quality in adjacent areas? | Siloed | Cross-domain transfer | __/5 |
-| **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | __/5 |
+### Correction Loop - 3/5
+**What you capture today:** accept, reject, or manual override on each suggested rebooking.
+**How it compounds:** disruption events are rare per traveler, so volume builds slowly. Still, every override teaches the model what "acceptable" actually looks like, not just "technically valid."
 
-### Correction Loop - __/5
-**What you capture today:**
-**How it compounds:**
+### Preference Loop - 4/5
+**What you capture today:** past bookings, price sensitivity, loyalty status, prior rebooking choices, events data, experience behavioural data (analytics).
+**How it compounds:** inherited from the host OTA's existing data, not built from scratch. Personalization gets sharp fast because the starting dataset is already rich.
 
-### Preference Loop - __/5
-**What you capture today:**
-**How it compounds:**
+### Domain Context Loop - 3/5
+**What you capture today:** disruption type, resolution path, traveler reaction, tagged by category.
+**How it compounds:** real but not automatic. Flight and hotel disruption rules differ a lot supplier to supplier, so transfer needs deliberate design, not a free byproduct of usage.
 
-### Domain Context Loop - __/5
-**What you capture today:**
-**How it compounds:**
+### Network Loop - 2/5
+**What you capture today:** aggregate delay and cancellation frequency by airline, route, and hotel property.
+**How it compounds:** weakest loop by nature here. It's a supplier-reliability signal, not a direct user-to-user network effect. Grows the pie slowly, not the moat.
 
-### Network Loop - __/5
-**What you capture today:**
-**How it compounds:**
+**Total Flywheel Score: 12/20**
+**Weakest Loop:** Network
+**Fix for weakest loop:** stop treating this as a purely reactive signal. Surface supplier-risk warnings at the point of booking, before a disruption happens, so aggregate data creates value for every user upfront, not just for the ones who happen to get hit.
 
-**Total Flywheel Score: __/20**
-**Weakest Loop:**
-**Fix for weakest loop:**
 
 ---
 
