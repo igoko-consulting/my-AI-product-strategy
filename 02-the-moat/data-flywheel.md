@@ -20,11 +20,11 @@
 **How it compounds:** inherited from the host OTA's existing data, not built from scratch. Personalization gets sharp fast because the starting dataset is already rich.
 
 ### Domain Context Loop - 3/5
-**What you capture today:** disruption type, resolution path, traveler reaction, tagged by category.
+**What you capture today:** disruption type, resolution path, traveler reaction, tagged by category.<br>
 **How it compounds:** real but not automatic. Flight and hotel disruption rules differ a lot supplier to supplier, so transfer needs deliberate design, not a free byproduct of usage.
 
 ### Network Loop - 2/5
-**What you capture today:** aggregate delay and cancellation frequency by airline, route, and hotel property.
+**What you capture today:** aggregate delay and cancellation frequency by airline, route, and hotel property.<br>
 **How it compounds:** weakest loop by nature here. It's a supplier-reliability signal, not a direct user-to-user network effect. Grows the pie slowly, not the moat.
 
 **Total Flywheel Score: 12/20**
