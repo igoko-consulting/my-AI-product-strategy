@@ -73,12 +73,16 @@
 ---
 
 ## 90-Day Encroachment Plan
-
 *Your partner played the Big Tech attacker. What was their plan to kill you?*
 
-**Attacker:**
-**Attack vector (target the weakest loop):**
-**Weeks 1-4 - what they ship:**
-**Weeks 5-8 - how they poach users:**
-**Weeks 9-12 - why users don't come back:**
-**Your defense:**
+**Attacker:** Google, Head of Product for Flights / Gmail
+
+**Attack vector (target the weakest loop):** Network. Google already has a global network effect on day one, from every Gmail user and every airline, so they skip past the years it would take us to build ours.
+
+**Weeks 1-4 - what they ship:** a lightweight "Flight Status + Rebooking Suggestions" feature inside Gmail and Google Flights, powered by aggregate flight status data across all travelers, not just our platform's.
+
+**Weeks 5-8 - how they poach users:** pushed as a free, no-signup Gmail notification, "Your flight XY123 is delayed, here are 3 alternatives," to anyone who forwarded a booking confirmation to Gmail. Reaches our users passively, without them ever opening our app.
+
+**Weeks 9-12 - why users don't come back:** the habit of checking our app when something goes wrong breaks. Google's suggestion is good enough for most cases using their own cross-airline data, even without our OTA-specific personalization, so the perceived need for us during a disruption disappears.
+
+**Your defense:** the weak Network loop can't be fixed by out-networking Google, so don't try. Make Google's version incomplete instead. Google can alert, but the actual rebooking still has to route back through the OTA or airline to pay and confirm. Own that last step end to end, rebooking, refund, compensation claim, and hotel adjustment, all in one flow, so Google's alert becomes free top-of-funnel distribution into our app instead of a replacement for it.
