@@ -37,22 +37,38 @@
 ## Encroachment Threat Assessment
 
 ### 1. Platform Encroachment
-**Attacker:**
-**Vector:**
-**Time-to-threat:**
-**% of value at risk:**
+**Attacker:** Google (Flights / Travel / Gmail trip parsing)
+
+**Vector:** Gmail already parses booking confirmations and Google Flights already tracks flight status. Layering an LLM rebooking-suggestion feature on top is a roadmap decision, not a technical buildout.
+
+**Time-to-threat:** 6 to 12 months, since the itinerary-detection infrastructure is already live today.
+
+**% of value at risk:** 40%. Google can plausibly out-alert us, but rebooking execution still needs to route back through the OTA or airline to actually pay and confirm. The "suggest" half of the value is exposed, the "book it" half is defended by owning the transaction.
+
+*(Assumption: Google prioritizes this as a feature, not a new standalone product, since travel isn't core to their business model.)*
 
 ### 2. Vertical Competitor
-**Attacker:**
-**Vector:**
-**Time-to-threat:**
-**% of value at risk:**
+**Attacker:** A flight-disruption specialist (compensation-claim startups like AirHelp, pivoting into full rebooking)
+
+**Vector:** Deep specialization in one niche: EU261-style compensation claims plus rebooking, aggregating disruption data across many OTAs' customers, not just ours.
+
+**Time-to-threat:** 6 to 9 months. The compensation-claims piece already exists, pivoting into rebooking is incremental, not a cold start.
+
+**% of value at risk:** 30%, concentrated specifically in the compensation and claims niche. Doesn't threaten the core booking relationship, but erodes the reason to trust us over a specialist for disruption handling specifically.
+
+*(Assumption: this attacker can access disruption data across OTAs, not just ours, giving them a broader training signal than we have alone.)*
 
 ### 3. Adjacent Expansion
-**Attacker:**
-**Vector:**
-**Time-to-threat:**
-**% of value at risk:**
+**Attacker:** Card issuers with travel insurance products (Amex, Chase Sapphire)
+
+**Vector:** They already see the travel purchase and offer trip-delay insurance, regardless of which OTA or airline was used. Adding proactive rebooking assistance is "one more benefit," not a new product line.
+
+**Time-to-threat:** 12 to 18 months. Slower mover, but existing insurance-claim infrastructure gives them a head start.
+
+**% of value at risk:** 20%, mostly mindshare and trust, not transaction value. They'd likely still redirect the customer back to us or the airline to execute a change.
+
+*(Assumption: card issuers don't currently have rebooking execution capability and would partner or redirect rather than build it themselves.)*
+
 
 ---
 
