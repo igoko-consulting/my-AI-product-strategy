@@ -12,11 +12,11 @@
 | **Network** | Does each new user / team make the product better for everyone? | Isolated | Strong network effects | 2/5 | More users on a route means better prediction of which suppliers to flag as risky, before the next traveler books |
 
 ### Correction Loop - 3/5
-**What you capture today:** accept, reject, or manual override on each suggested rebooking.
+**What you capture today:** accept, reject, or manual override on each suggested rebooking.<br>
 **How it compounds:** disruption events are rare per traveler, so volume builds slowly. Still, every override teaches the model what "acceptable" actually looks like, not just "technically valid."
 
 ### Preference Loop - 4/5
-**What you capture today:** past bookings, price sensitivity, loyalty status, prior rebooking choices, events data, experience behavioural data (analytics).
+**What you capture today:** past bookings, price sensitivity, loyalty status, prior rebooking choices, events data, experience behavioural data (analytics).<br>
 **How it compounds:** inherited from the host OTA's existing data, not built from scratch. Personalization gets sharp fast because the starting dataset is already rich.
 
 ### Domain Context Loop - 3/5
