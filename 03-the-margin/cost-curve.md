@@ -142,11 +142,29 @@ Keep polls inside the request count rather than in Non-AI COGS, so the usage-vol
 
 ## Board One-Pager
 
-**Before (traditional SaaS):** booking commission only, ~$200 per completed trip on a $2,300 booking. No recurring AI cost, and no differentiation at the moment of choice — the product competes on price and inventory like every other OTA.
+The traditional-SaaS side of this comparison is not seat-based — this is a booking business, so the equivalent unit is commission per completed trip.
 
-**After (AI-enabled):** same commission, plus $35.00 per disruption resolved and a paid autonomy tier. AI COGS of $1.80 per active trip-month at 91% gross margin, holding 58.5% through a correlated storm month. Sold standalone instead, the same cost base supports a $6.49 + metered SKU at 76.8%.
+| | Before, traditional | After, AI-powered |
+|---|---|---|
+| Revenue | $200.00 per completed trip (~10% commission on a $2,300 booking) | $200.00 + $6.49 base + $35.00 × 0.036 outcomes = **$207.75** |
+| COGS | $12.00 fixed — search infrastructure, payments, fraud, support | $13.80 variable — $12.00 fixed + $1.80 AI |
+| Gross margin | **94.0%** ($188.00 per trip) | **93.4%** ($193.95 per trip) |
 
-**Net margin shift:** −$1.80 per active trip in COGS against ~$200 of commission. **The copilot pays for itself if it lifts repeat-booking or conversion rate by 0.9%.** That is the number the investment case rests on, and it is a far lower bar than the cost model implies.
+**Net margin shift:** Δ margin **−0.6pp** · Δ gross profit **+$5.95 per trip (+3.2%)**
+
+**Narrative.** Margin percentage falls because we have added a variable-cost line to a business that had almost none, and a board that reads the percentage alone will read it as a step backwards. Gross profit per trip rises $5.95 before any behavioural effect is counted, and the copilot only has to lift conversion or repeat booking by **0.9%** to cover its own COGS — the lowest bar in the model. The hedge worth stating out loud: AI revenue and AI cost both move with disruption, so a bad winter cannot open a gap between them.
+
+### Unit economics of one resolved disruption
+
+| Question | Answer |
+|---|---|
+| What does one successful outcome cost us? | **$1.50 marginal** — the reasoning burst that finds the routing and re-orchestrates the trip. **$50.00 fully loaded** — $1.80 COGS ÷ 0.036 resolutions per active trip-month. |
+| What do we charge for it? | **$35.00 per resolution plus a $6.49 base**, $7.75 per active trip-month. 23× marginal cost, but only 70% of fully loaded. |
+| What happens if usage triples? | **Monitoring volume:** COGS $4.41, revenue flat, margin 76.8% → **43.1%**, gross profit $5.95 → $3.34. **Disruption events:** revenue $10.27, COGS ~$3.23, margin **~68.5%**, gross profit up to $7.04. |
+
+**The $48.50 gap between marginal and fully loaded cost is the watching we do on everyone else.** Any unit-cost discussion that quotes only the marginal figure is misleading, and it is the reason the metered fee alone never funds the product.
+
+**We are exposed to the thing nobody worries about and hedged against the thing everyone does.** Tripling monitoring volume halves the margin; tripling disruption events improves it, because outcome pricing couples revenue to the event that drives cost.
 
 ---
 
