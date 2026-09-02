@@ -82,23 +82,40 @@ Keep polls inside the request count rather than in Non-AI COGS, so the usage-vol
 ## Pricing Model
 
 **Current pricing:** booking commission, ~10% of trip value (~$200 on a $2,300 booking).
-**Proposed AI pricing:** free always-on monitoring (the wedge), a fee per successful resolution, and the full-autonomy tier sold as a paid add-on.
-**Model:** **hybrid, weighted to outcome.**
+**Proposed AI pricing:** $6.49 per active trip-month base, plus $35.00 per disruption resolved.
+**Model:** **hybrid (base + usage), weighted to outcome.**
+
+### Pricing Strategy Block
+
+| | |
+|---|---|
+| Strategy posture | **Penetrate** |
+| Pricing model | **Hybrid (base + usage)** |
+| Unit of work metered | **disruptions resolved** |
+| Base fee | **$6.49** per active trip-month |
+| Price per unit | **$35.00** |
+| Estimated units per user/month | **0.036** |
+| **Implied revenue per user/month** | **$7.75** |
+
+**Decision note.** Travellers will not pay a subscription for a product that visibly does nothing most months, and will not accept a pure per-incident fee that bills them on the worst day of their trip. The base fee prices the watching, which we incur on 100% of trips; the per-resolution fee prices the work, which lands on 3.6%. Penetrate posture because the value only proves itself on trips that break — volume under watch has to come before word of mouth exists. At $6.49 per trip that is 0.3% of a $2,300 booking, an order of magnitude below travel insurance.
+
+**Why 0.036 units:** ~6% of trips need a rebooking, of which ~60% have autonomy enabled and approve.
 
 **Why outcome, not access:** the copilot does the work a human would otherwise do — it finds the seat, holds it, moves the hotel and the transfer. There is a discrete, countable event to bill against, and the value is denominated in money the customer already recognises (a saved day, an avoided $140 airport hotel, a rebooking fee not paid). Access pricing fails on its own terms here: nobody wants unlimited use of a disruption copilot, because heavy usage means a terrible year of travel.
 
-**The economics of the two revenue cases:**
+**The economics of the three revenue cases:**
 
 | Case | Revenue / active trip-month | Gross margin | Under 3× cost shock |
 |---|---|---|---|
-| Attached to booking commission | $20.00 | 91.0% | 78.0% |
-| Standalone per-resolution fee only | $1.26 | −42.9% | −250% |
+| **Base case** — attached to booking commission | $20.00 | 91.0% | 78.0% |
+| **Standalone SKU** — $6.49 base + metered resolutions | $7.75 | 76.8% | 43.1% |
+| *Rejected* — resolution fee only, no base | $1.26 | −42.9% | −250% |
 
-The standalone figure is built from: ~6% of trips need a rebooking × ~60% of those having autonomy enabled and approving × a $35 fee. **Cost is incurred on 100% of trips; revenue arrives on 3.6% of them.**
+**Read the first two rows as alternatives, not as one number.** The $20 driving the cost model is commission attributed to the copilot inside a booking business. The $7.75 is what the copilot charges if sold as its own product. They are different go-to-market choices and should never be added together.
 
-**Thresholds for a standalone product:** $3.00 per active trip-month clears 40%; holding 40% under 3× stress needs $7.35. A $1.26 resolution fee plus a ~$1.99 monitoring fee reaches the first, not the second.
+**Cost is incurred on 100% of trips; metered revenue arrives on 3.6% of them.** That asymmetry is why the base fee exists. **Thresholds:** $3.00 per active trip-month clears 40%, and holding 40% under 3× stress needs $7.35 — which the $6.49 base reaches and a $1.99 monitoring fee does not.
 
-**Conclusion:** the copilot works as a feature attached to booking commission, or sold B2B to whoever owns the disruption cost. Standalone consumer subscription is worth testing but does not survive the stress case.
+**Conclusion:** commission attachment remains the base case. The standalone SKU now survives the stress case at 43.1%, but only because the base fee carries it — the metered line alone never does.
 
 **Commercial risk to name early:** outcome pricing means you earn most when travel goes worst. Selling B2B to an airline or OTA means being paid when their operation fails, which they may reject on optics alone and prefer a flat platform fee. B2C does not have this problem.
 
