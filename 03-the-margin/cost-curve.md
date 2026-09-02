@@ -38,6 +38,10 @@ All figures below are modelled, not disclosed. Confidence ~65%: the model-call s
 **Revenue per active trip-month:** $20.00 (share of booking commission attributed to the copilot).
 **Gross margin: 91.0% — $18.20 per active trip-month.**
 
+![Margin calculator run, Module 3](margin-calculator-output.png)
+
+*Margin calculator run, Module 3: 620 requests at $0.0021 blended, $20 revenue, $0.50 non-AI COGS. Confirms 91.0% base margin, 78.0% at 3× cost, 84.5% at 2× usage.*
+
 ### Features → tiers → blended COGS
 
 | Feature | Complexity | Model tier | Cost/req | Volume % | Weighted | Rationale (justification for model): why this tier (pros/cons) |
