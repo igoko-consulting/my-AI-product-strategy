@@ -160,11 +160,21 @@ The traditional-SaaS side of this comparison is not seat-based — this is a boo
 |---|---|
 | What does one successful outcome cost us? | **$1.50 marginal** — the reasoning burst that finds the routing and re-orchestrates the trip. **$50.00 fully loaded** — $1.80 COGS ÷ 0.036 resolutions per active trip-month. |
 | What do we charge for it? | **$35.00 per resolution plus a $6.49 base**, $7.75 per active trip-month. 23× marginal cost, but only 70% of fully loaded. |
-| What happens if usage triples? | **Monitoring volume:** COGS $4.41, revenue flat, margin 76.8% → **43.1%**, gross profit $5.95 → $3.34. **Disruption events:** revenue $10.27, COGS ~$3.23, margin **~68.5%**, gross profit up to $7.04. |
+| What happens if usage triples? | **Monitoring intensity per trip:** COGS $4.41, revenue per trip flat, margin 76.8% → **43.1%**, gross profit $5.95 → $3.34. **Disruption events:** revenue $10.27, COGS ~$3.23, margin **~68.5%**, gross profit up to $7.04. **More trips watched:** neutral — the base fee is charged per trip, so cost and revenue scale together. |
 
 **The $48.50 gap between marginal and fully loaded cost is the watching we do on everyone else.** Any unit-cost discussion that quotes only the marginal figure is misleading, and it is the reason the metered fee alone never funds the product.
 
-**We are exposed to the thing nobody worries about and hedged against the thing everyone does.** Tripling monitoring volume halves the margin; tripling disruption events improves it, because outcome pricing couples revenue to the event that drives cost.
+**We are exposed to the thing nobody worries about and hedged against the thing everyone does.** Tripling monitoring *intensity per trip* halves the margin; tripling disruption events improves it, because outcome pricing couples revenue to the event that drives cost.
+
+**Three growth drivers, three different outcomes — do not conflate them:**
+
+| Driver | Effect | Verdict |
+|---|---|---|
+| More trips watched (customer growth) | Cost and base-fee revenue scale together | Neutral. Growth is not the risk. |
+| More requests per trip (tighter cadence, more signals, longer watch windows) | Cost rises, revenue per trip flat | **Exposed.** 76.8% → 43.1% at 3×. |
+| More disruptions (the bad winter) | Cost rises, $35 fee fires more often | **Hedged.** Margin rises to ~68.5%. |
+
+The exposed driver is the one nobody escalates, because it is not a market event — it is an engineer tightening the poll interval from fifteen minutes to five to cut the miss rate. A sound quality decision that triples COGS and never reaches a board paper. This is why cascading ratio and poll cadence are the sliders that matter.
 
 ---
 
