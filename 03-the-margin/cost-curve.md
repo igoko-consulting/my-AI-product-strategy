@@ -17,7 +17,7 @@ All figures below are modelled, not disclosed. Confidence ~65%: the model-call s
 | **Killer** | Full autonomy — auto-rebook inside limits, plus whole-trip re-orchestration (hotel, transfer, reservations) | Where the real cost and the real liability sit, and only a minority will switch it on. |
 
 **Killer usage:** estimated 25–40% enablement. Unmeasured — instrument the autonomy setting after a user's first successful save.
-**Bundle or add-on:** **Add-on.** Fails the 70% rule. Sell as a premium tier or per-resolution fee.
+**Bundle or add-on:** **Add-on.** Fails the 70% rule. Priced at $35.00 per disruption resolved — see Pricing Model.
 
 **Why this split matters:** the leader and the margin problem are not the same feature. Detection is cheap and wins the customer; autonomous action is expensive and a minority use it. Bundling them hides the cost of the killer inside a free wedge.
 
@@ -35,7 +35,7 @@ All figures below are modelled, not disclosed. Confidence ~65%: the model-call s
 | **Total AI COGS** | **$1.30** | 620 requests at $0.0021 blended |
 | **Total COGS** | **$1.80** | AI + non-AI |
 
-**Revenue per active trip-month:** $20.00 (share of booking commission attributed to the copilot).
+**Revenue per active trip-month:** $20.00 (share of booking commission attributed to the copilot — the base case; the standalone SKU is priced at $7.75 in Pricing Model).
 **Gross margin: 91.0% — $18.20 per active trip-month.**
 
 ![Margin calculator run, Module 3](margin-calculator-output.png)
@@ -140,7 +140,7 @@ Keep polls inside the request count rather than in Non-AI COGS, so the usage-vol
 
 **Before (traditional SaaS):** booking commission only, ~$200 per completed trip on a $2,300 booking. No recurring AI cost, and no differentiation at the moment of choice — the product competes on price and inventory like every other OTA.
 
-**After (AI-enabled):** same commission, plus per-resolution fees and a paid autonomy tier. AI COGS of $1.80 per active trip-month at 91% gross margin, holding 58.5% through a correlated storm month.
+**After (AI-enabled):** same commission, plus $35.00 per disruption resolved and a paid autonomy tier. AI COGS of $1.80 per active trip-month at 91% gross margin, holding 58.5% through a correlated storm month. Sold standalone instead, the same cost base supports a $6.49 + metered SKU at 76.8%.
 
 **Net margin shift:** −$1.80 per active trip in COGS against ~$200 of commission. **The copilot pays for itself if it lifts repeat-booking or conversion rate by 0.9%.** That is the number the investment case rests on, and it is a far lower bar than the cost model implies.
 
@@ -148,7 +148,7 @@ Keep polls inside the request count rather than in Non-AI COGS, so the usage-vol
 
 ## Assumptions and Open Questions
 
-1. **$20 attributed revenue is an assumption, not a result.** It is the least examined input in the model and the whole margin case rests on it.
+1. **$20 attributed revenue is an assumption, not a result.** It is the least examined input in the model and the base case rests on it. The standalone alternative is now priced from the bottom up at $7.75, so the two cases can be compared rather than one being assumed.
 2. **The 94% cascade ratio is unvalidated.** It holds only if deterministic rules and a cheap model can carry poll evaluation without missing real disruption. A false negative here is a customer-facing failure, not a cost overrun.
 3. **Flight-status feed pricing is the softest number.** It drives the non-AI line and does not deflate with LLM prices.
 4. **Autonomy adoption is the metric the business model lives on.** Notify-only users generate no billable outcome. Instrument the setting change after a user's first successful save.
