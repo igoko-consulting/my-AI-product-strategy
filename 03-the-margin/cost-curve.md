@@ -97,6 +97,10 @@ Keep polls inside the request count rather than in Non-AI COGS, so the usage-vol
 | Estimated units per user/month | **0.036** |
 | **Implied revenue per user/month** | **$7.75** |
 
+![Pricing Strategy Designer run, Module 3](pricing-strategy-output.png)
+
+*Pricing Strategy Designer run, Module 3: Penetrate posture, hybrid base + usage, metered on disruptions resolved. $6.49 base plus $35.00 per resolution at 0.036 units gives $7.75 implied revenue per active trip-month.*
+
 **Decision note.** Travellers will not pay a subscription for a product that visibly does nothing most months, and will not accept a pure per-incident fee that bills them on the worst day of their trip. The base fee prices the watching, which we incur on 100% of trips; the per-resolution fee prices the work, which lands on 3.6%. Penetrate posture because the value only proves itself on trips that break — volume under watch has to come before word of mouth exists. At $6.49 per trip that is 0.3% of a $2,300 booking, an order of magnitude below travel insurance.
 
 **Why 0.036 units:** ~6% of trips need a rebooking, of which ~60% have autonomy enabled and approve.
