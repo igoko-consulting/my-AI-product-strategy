@@ -38,6 +38,18 @@ All figures below are modelled, not disclosed. Confidence ~65%: the model-call s
 **Revenue per active trip-month:** $20.00 (share of booking commission attributed to the copilot).
 **Gross margin: 91.0% — $18.20 per active trip-month.**
 
+### Features → tiers → blended COGS
+
+| Feature | Complexity | Model tier | Cost/req | Volume % | Weighted | Rationale (justification for model): why this tier (pros/cons) |
+|---|---|---|---|---|---|---|
+| Poll evaluation (flight status, hub weather, inventory) | Simple | Small | $0.0007 | 93.5% | $0.00066 | **Pro:** 93.5% of volume — anything dearer here sets the whole curve.<br>**Con:** a missed signal is a customer-facing failure, not a cost overrun.<br>**Why:** pattern-matching against thresholds, no reasoning needed. |
+| Search refinement (4 questions, intent parsing) | Medium | Mid | $0.0060 | 3.5% | $0.00021 | **Pro:** needs to read vague input ("somewhere warm") and stay conversational.<br>**Con:** small-tier output reads robotic and users abandon the flow.<br>**Why:** quality is visible to the user, cost is not. |
+| Option ranking + "why this trip" copy | Medium | Mid | $0.0120 | 1.6% | $0.00019 | **Pro:** must weigh four stated preferences and justify a ranking in plain English.<br>**Con:** frontier adds polish nobody notices at browse stage.<br>**Why:** cheap enough to ignore, visible enough to matter. |
+| Disruption re-route plan + whole-trip re-orchestration | Complex | Frontier | $0.0800 | 1.3% | $0.00104 | **Pro:** this is the leader feature — a wrong rebooking loses a customer permanently.<br>**Con:** 50% of AI COGS on 1.3% of volume.<br>**Why:** the only step with real consequences. Do not economise here. |
+| **Blended** | | | | **100%** | **$0.0021** | |
+
+Reconciles to $1.30 AI COGS across 620 requests.
+
 ### Correction applied
 An earlier run double-counted the polling: the 620 requests already include the ~580 machine polls, and Non-AI COGS carried them a second time at $2.00. Corrected to $0.50, which now covers hosting, support and payment processing only. Cross-check: splitting the other way — 40 AI requests at $0.020 with polls moved into Non-AI COGS at $1.02 — lands at $1.82 against $1.80. The two routes agree.
 
@@ -50,9 +62,16 @@ Keep polls inside the request count rather than in Non-AI COGS, so the usage-vol
 **Triage model:** deterministic threshold rules first, small/cheap model second. Evaluates flight status, hub weather probability, crew and aircraft rotation, hotel inventory.
 **Frontier model:** reserved for reasoning about a live disruption — generating and ranking alternative routings, working out what else in the trip has to move.
 **Routing rule:** a poll never reaches the frontier model unless disruption probability crosses ~70% or the itinerary state actually changes.
-**Expected cascade ratio:** ~94% of requests (580 of 620) never touch the frontier model.
+**Expected cascade ratio:** 94% small / 6% mid+frontier — 580 of 620 requests never touch the frontier model.
 
 **Headroom:** blended cost per request can rise from $0.0021 to **$0.0161 before margin hits 40%** — 7.7×. This is the single assumption to re-test, because it depends entirely on whether a cheap model can be trusted with rebooking reasoning. If it cannot, the escalation rate rises and the headroom is consumed.
+
+### If we cut cost, where and why
+
+- **Cut the poll row, not the frontier row.** Moving 70% of polls to pure rules with no model call at all takes AI COGS from $1.30 to $1.01. It is the only line where volume makes a small saving compound.
+- **The saving is trivial, and that is the finding.** Margin moves 91.0% to 92.4%. At $1.80 COGS against ~$200 commission, cost optimisation is not where the value is.
+- **So cut for resilience, not margin.** The reason to strip model calls out of polling is the storm month, when the whole affected cohort escalates at once — a load and latency problem before it is a cost one.
+- **Never cut the frontier row.** $0.64 per trip buys the one feature people switch platform for. Degrading it to save 3% of COGS risks the 0.9% conversion lift the entire business case rests on.
 
 ---
 
