@@ -31,13 +31,22 @@ Dataset health
 
 ## Confidence UX Design
 
-**Approach:** show uncertainty / tiered confidence / human-in-loop trigger
+**Approach:** Tiered confidence in the action rather than the prediction: what the copilot may do without asking scales with how sure it is that the fix is right, evidence behind every recommendation is one tap away, and the bottom tier hands off to a human rather than guessing.
 
-**High confidence (>90%):**
-**Medium confidence (70-90%):**
-**Low confidence (<70%):**
+**Confident (>90%):** Act to the limit of the user's autonomy setting. One recommendation, stated plainly, with a one-tap approve and the alternative already held. Under auto-rebook, ticket it and send a receipt showing what changed, what it cost, and how to undo it. Evidence panel present but collapsed: which signals fired, what was held, what else moved.
 
-**User control surface:**
+**Uncertain (50-90%):** Hold, never commit — regardless of autonomy setting, including auto-rebook. Present 2-3 ranked options instead of one recommendation, and name what is not yet known ("the airline has not confirmed the cancellation"). Language shifts from "I've rebooked you" to "I'd suggest". No irreversible action and no spend at this tier.
+
+**Not confident (<50%):** Do not present a plan. Show what we know, what we are waiting on, and when we will next check. Raise monitoring cadence and route to a human agent if departure is inside 4 hours. Never invent a routing to look useful — a plausible wrong itinerary at low confidence is worse than saying nothing.
+
+**User control surface:** 
+
+Every recommendation carries five one-tap responses: "wrong option", "too early", "too late", "I'd already sorted it", and "don't act without asking me again". The last writes straight to the autonomy setting, so the fastest correction also changes future behaviour rather than just this decision. Each response is logged with the full signal state at that moment and becomes a candidate row in the golden dataset.
+
+- Users see AI reasoning / drivers
+- Users correct & override outputs
+- Corrections feed back into the model / dataset
+- Users adjust the confidence threshold _(not yet)_
 
 ## Reliability Contract
 
