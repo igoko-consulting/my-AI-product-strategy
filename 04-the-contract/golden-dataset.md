@@ -29,6 +29,9 @@ Dataset health
 - EU261 entitlement accuracy: claiming a refund path that does not apply is legal exposure, not a UX bug
 - Re-prompt after a decline: probability rises later, but the user already said no once
 
+![Golden Dataset Builder run](golden-dataset-builder.png)
+*Golden Dataset Builder, Module 4: 10 test cases, 6 edge cases (60%), 3 adversarial, judge mix 30% rule / 30% LLM / 40% both.*
+
 ## Confidence UX Design
 
 **Approach:** Tiered confidence in the action rather than the prediction: what the copilot may do without asking scales with how sure it is that the fix is right, evidence behind every recommendation is one tap away, and the bottom tier hands off to a human rather than guessing.
@@ -53,6 +56,9 @@ Every recommendation carries five one-tap responses: "wrong option", "too early"
 The prototype shows a numeric figure ("Recommended · 94% confidence") on every recommendation. Untested with the actual reader: someone at 06:00 in an airport who has just been told their flight is going. The alternative is to show only the evidence and drop the number.
 
 Why it matters: the number is doing the work of consent. If 94% reassures but 61% alarms, then the same design that builds trust at the top tier destroys it in the middle tier — the exact tier where we most need the user to engage and choose between options. Cheap to settle with an A/B test on number vs evidence-only, split by tier, and it should be settled before autonomy adoption is measured, since a figure that scares people will suppress the setting the business model depends on.
+
+![Confidence UX Designer run](confidence-ux-designer.png)
+*Confidence UX Designer, Module 4: tiered confidence on the action rather than the prediction, with a human-in-loop trigger below 50%.*
 
 ## Reliability Contract
 
@@ -93,3 +99,6 @@ becomes a mass one.
 
 **Both are now candidate golden rows:** ticket committed then original flight operates; and
 confidence calibration measured separately under correlated versus independent conditions.
+
+![Reliability Contract Builder run](reliability-contract-builder.png)
+*Reliability Contract Builder, Module 4: 93% accuracy with a separate 100% gate on safety rows, <0.5% hallucination, <2s p95 and <90s signal-to-hold, <0.5%/wk drift.*
