@@ -48,6 +48,12 @@ Every recommendation carries five one-tap responses: "wrong option", "too early"
 - Corrections feed back into the model / dataset
 - Users adjust the confidence threshold _(not yet)_
 
+**Open question — does the confidence percentage help or alarm?**
+
+The prototype shows a numeric figure ("Recommended · 94% confidence") on every recommendation. Untested with the actual reader: someone at 06:00 in an airport who has just been told their flight is going. The alternative is to show only the evidence and drop the number.
+
+Why it matters: the number is doing the work of consent. If 94% reassures but 61% alarms, then the same design that builds trust at the top tier destroys it in the middle tier — the exact tier where we most need the user to engage and choose between options. Cheap to settle with an A/B test on number vs evidence-only, split by tier, and it should be settled before autonomy adoption is measured, since a figure that scares people will suppress the setting the business model depends on.
+
 ## Reliability Contract
 
 | Metric | Target | Measurement | Alert Threshold |
