@@ -58,13 +58,38 @@ Why it matters: the number is doing the work of consent. If 94% reassures but 61
 
 | Metric | Target | Measurement | Alert Threshold |
 |--------|--------|-------------|-----------------|
-| Accuracy | | | |
-| Hallucination rate | | | |
-| Latency (p95) | | | |
-| Drift velocity | | | |
+| Accuracy | 93% | Weekly, 150 golden rows at v1. Rule judge for policy compliance, LLM-as-judge on a 1-5 rubric for reasoning quality; a row fails below 4. Rule-graded safety rows (spend limit, consent, instructions found in ingested content) are gated separately at 100% and are not averaged into the 93%. | <89% → pages on-call PM → page on-call |
+| Hallucination rate | <0.5% | Same weekly run. Every flight number, seat, room, price and passenger-rights claim in output must resolve against a live inventory or regulation record; anything unresolvable counts as a hallucination. Safety rubric additionally flags invented EU261 entitlements. | >1% → auto-rollback to last good model, all users downgraded to ask-first → auto-rollback to last good model |
+| Latency (p95) | <2s user-facing plan; <90s signal-to-hold | Continuous prod monitoring (Datadog), p95 by endpoint, plus a separate signal-to-hold timer from threshold crossing to seats held. | >4s for 5 min, or signal-to-hold >180s → PagerDuty → page on-call |
+| Drift velocity | <0.5%/wk | 4-week rolling accuracy trend on the fixed golden set, segmented by season and disruption type so a genuine seasonal shift is distinguishable from model decay. | >1% decay/wk → gold-set audit within 5 working days → trigger gold-set audit |
 
 ## HITL Architecture
-<!-- When does a human step in? What's the escalation path? -->
+
+**Trigger:** Confidence <50%, or a safety flag fires, or departure is inside 4 hours with no viable option, or a correlated event affects more than 200 watched itineraries, or a proposed action exceeds the user's stored spend limit.
+
+**Reviewer:** Rotating travel-ops agent, 24/7 follow-the-sun. Duty PM escalation for policy questions only.
+
+**Feedback loop:** Reviewer corrections and user overrides both become candidate golden rows, reviewed in the weekly gold-set audit. Prompt revision or retrain triggers at 5+ new rows, or immediately on any rule-graded safety-row failure.
 
 ## Red-Team Findings
-*What failure mode did your partner find that you missed?*
+
+*No external partner review yet. The following came from an internal adversarial pass and is
+labelled as such — a peer red-team is still outstanding and is the next step for this section.*
+
+**1. "All reversible" is a promise the airline does not honour.** The prototype's action log
+tells the user every action is reversible, and the Confidence UX offers an undo. That holds for
+a held seat, a moved hotel night and a rebooked transfer. It does not hold once the ticket is
+reissued: if we rebook and the original flight then operates, the original seat is gone and the
+fare may be non-refundable. The golden dataset tests that we hold rather than ticket, but nothing
+tests the state *after* a ticket is committed and the disruption fails to materialise. The trust
+model rests on a claim the product cannot keep at its most consequential step.
+
+**2. Confidence is least reliable exactly when it is shown most.** The displayed figure is
+derived from historical base rates that assume independent disruption events. During a
+correlated event — the storm month the cost model is built around — the error is systematic and
+in the same direction for every affected traveller at once. So the number is at its least
+trustworthy in the situation that generates most of its impressions, and a single miscalibration
+becomes a mass one.
+
+**Both are now candidate golden rows:** ticket committed then original flight operates; and
+confidence calibration measured separately under correlated versus independent conditions.
