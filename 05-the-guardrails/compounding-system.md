@@ -1,3 +1,5 @@
+# Compounding System Design
+
 ## Feedback Loops
 
 | Loop | Input | Output | Compounds? | Status |
@@ -48,6 +50,7 @@ swap. The freeze test is the same requirement from the other direction — if a 
 us, we are renting our advantage, and the M4 golden dataset is the instrument that proves either way.
 
 **Broken loop identified:** Outcome Calibration. We log what we did but never whether we were right — the original flight's actual status is never recorded, so the confidence percentage shown to every traveller never learns from being wrong.
+
 **Fix plan:** Add an outcome record to every held or rebooked case: original flight status at departure, hold conversion, actual arrival. Pipe it into the weekly gold-set audit and report calibration error split by correlated versus independent events, since a storm makes the error systematic across the whole cohort at once. Owned by the on-call PM.
 
 ## Context Connectivity
