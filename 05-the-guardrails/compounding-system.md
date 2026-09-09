@@ -110,6 +110,10 @@ Owners are role titles, not people. Replace them with names before this goes to 
 - **Entitlement statements** are template-bound and human-approved, never model-generated.
 - **Log retention** of 24 months on automated actions, matching the EU261 claim window.
 
+**Internal (employee-side) AI use.** Separate from the user-side audit below, which is a roadmap exercise rather than a security one. Three unsanctioned internal tools found: consumer ChatGPT used by travel ops to draft traveller apologies (high risk, brought under governance), an unsanctioned Zapier and LLM automation summarising disruption tickets into Slack (medium, governed), and a personal-account prompt drafting EU261 entitlement responses (high, killed). The third is a kill rather than a govern because it produces regulated compensation statements with no audit trail, from an account the company cannot access - the same action the autonomy table above restricts to human approval, happening outside the policy entirely. Seven tools found in total, five remaining, estimated hidden spend $340/month. Illustrative figures.
+
+**The finding that matters beyond compliance.** Ops agents pasting itineraries into consumer chatbots is not only a GDPR exposure, it is a flywheel leak: the correction signal that should feed our golden dataset is handed to a third party instead.
+
 ## Agent Topology
 
 - **Watcher.** Can read signals and compute disruption probability. Cannot contact the traveller, hold inventory or spend. Approval owner: none required.
@@ -121,20 +125,31 @@ The rule underneath all four: no agent both decides and executes an irreversible
 
 ## Shadow AI Audit
 
+*User-side: what our travellers and travel admins are building with AI around the product. Employee-side AI is covered under Governance Policy above.*
+
 | Tool | Owner | Risk Level | Decision |
 |------|-------|-----------|----------|
-| Consumer ChatGPT used to draft traveller apology and explanation messages | Head of Travel Ops | H | govern |
-| Unsanctioned Zapier + LLM automation summarising disruption tickets into Slack | Support lead | M | govern |
-| Personal-account prompt drafting EU261 entitlement responses to travellers | Individual CS agent | H | kill |
+| Travellers paste an itinerary we didn't sell into ChatGPT to ask "is this connection tight?" | Public forums / Reddit | H | build |
+| Travellers screenshot our rebooking options into ChatGPT and ask which to pick | Support tickets | M | build |
+| Zapier recipe forwarding airline cancellation emails to a GPT that drafts EU261 claims | Zapier / Make directory | M | partner |
+| Travel admins export bookings to CSV and have ChatGPT build a disruption and spend report for finance | Sales calls | M | build |
+| Travellers keep a personal ChatGPT trip thread for visa, baggage and lounge questions we won't answer | User interviews | H | ignore |
+| Users ask ChatGPT to draft the complaint letter after our copilot got it wrong | Social media | L | ignore |
 
-The table lists the three highest-risk findings. Four further tools were found and are not itemised here: two already sanctioned, two low-risk and brought under the same governance route as row 2.
+Columns follow the audit tool: Owner is the signal source, Risk Level is frequency, Decision is build / partner / ignore.
 
-**Audit result:** 7 tools found — 2 killed, 3 brought under governance, 2 already sanctioned. 5 remain in use.
+**Total tools found:** 6 workarounds
 
-**Estimated hidden spend:** $340/month
+**Tools after triage:** 3 build candidates, 1 partner, 2 ignore and monitor
 
-Figures are illustrative, consistent with the fictional scenario.
+**Estimated hidden spend:** $89/month adjacent spend across surveyed users. Illustrative.
 
-**Why the third is a kill and not a govern.** It produces regulated statements about compensation entitlements, with no audit trail, from an account the company cannot access. That is the same action the governance policy above classes as human-approval-only, happening entirely outside the policy.
+**Dominant signal:** capability gap, 3 of 6.
 
-**The finding that matters beyond compliance.** Ops agents pasting itineraries into consumer chatbots is not only a GDPR exposure, it is a flywheel leak. The correction signal that should be feeding our golden dataset is being handed to a third party instead — the loop this module is about is being drained by the tools this section audits.
+### Action plan
+
+**Build.** Row 2 first: travellers seeking a second opinion on our own recommendation is a trust gap we created, and the Confidence UX work is already half the fix. Then row 1, extending disruption risk scoring to itineraries we did not sell — the workaround is proof of demand and doubles as an acquisition wedge. Row 4 last: a disruption and spend export for travel admins, a segment the product currently ignores entirely.
+
+**Partner.** Row 3, EU261 claims, with a specialist provider rather than building. Our disruption record hands off the evidence pack; they own the claim and the regulated advice. Building it ourselves crosses the FCA and IDD boundary M3 deliberately stays outside, and EU261 accuracy is already logged as an M4 coverage gap.
+
+**Ignore and monitor.** Row 5, general travel questions: unbounded scope, and a wrong visa answer is a liability we would own. Re-evaluate if it appears in churn interviews rather than idle curiosity. Row 6, complaint letters: not a roadmap item but a canary — rising frequency means the confidence and reversibility problems in Red-Team Findings are reaching travellers.
