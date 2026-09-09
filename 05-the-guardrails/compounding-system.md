@@ -84,7 +84,17 @@ Rows 4 and 6 stay human-approval even at high confidence: confidence is not auth
 
 **Escalation triggers:** (1) Confidence below 50% on the proposed fix. (2) Any rule-graded safety check fails: spend limit, consent, or instruction found in ingested content. (3) Departure inside 4 hours with no viable option held. (4) A single event affects more than 200 watched itineraries. (5) Proposed action exceeds the traveller's stored spend limit. (6) Traveller declines twice on the same disruption. (7) Output references a flight, room, price or entitlement that fails to resolve against a live record.
 
-**Audit cadence:** Real-time, Rule-graded safety checks on every autonomous action (On-call PM). Daily, Overnight autonomous actions: holds converted, tickets reissued, spend against limits (Head of Travel Ops). Weekly, Eval against the 150-row golden dataset: accuracy and hallucination versus contract (ML lead). Monthly, Confidence calibration and autonomy adoption; drift segmented by season and disruption type (On-call PM). Quarterly, Kill-switch portability re-score, DPIA review, shadow AI re-audit (DPO).
+**Audit cadence:**
+
+| Cadence | What we review | Owner |
+|---|---|---|
+| real-time | Rule-graded safety checks on every autonomous action | On-call PM |
+| daily | Overnight autonomous actions: holds converted, tickets reissued, spend against limits | Head of Travel Ops |
+| weekly | Eval against the 150-row golden dataset: accuracy and hallucination versus contract | ML lead |
+| monthly | Confidence calibration and autonomy adoption; drift segmented by season and disruption type | On-call PM |
+| quarterly | Kill-switch portability re-score, DPIA review, shadow AI re-audit | DPO |
+
+Owners are role titles, not people. Replace them with names before this goes to a security reviewer — a rota is not an owner.
 
 **Regulatory exposure (EU AI Act / other):** EU AI Act (transparency obligations), GDPR Arts. 13-15, 22 and 35, UK DPA 2018, PSD2 strong customer authentication, EU261 / UK261, PCI DSS for stored card credentials, and the FCA / IDD boundary we are deliberately staying outside. SOC 2 for the platform.
 
