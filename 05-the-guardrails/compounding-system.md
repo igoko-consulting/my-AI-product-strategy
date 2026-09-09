@@ -153,3 +153,11 @@ Columns follow the audit tool: Owner is the signal source, Risk Level is frequen
 **Partner.** Row 3, EU261 claims, with a specialist provider rather than building. Our disruption record hands off the evidence pack; they own the claim and the regulated advice. Building it ourselves crosses the FCA and IDD boundary M3 deliberately stays outside, and EU261 accuracy is already logged as an M4 coverage gap.
 
 **Ignore and monitor.** Row 5, general travel questions: unbounded scope, and a wrong visa answer is a liability we would own. Re-evaluate if it appears in churn interviews rather than idle curiosity. Row 6, complaint letters: not a roadmap item but a canary — rising frequency means the confidence and reversibility problems in Red-Team Findings are reaching travellers.
+
+### Roadmap Brief
+
+6 user-side workarounds discovered. Decisions: 3 build, 1 partner, 2 ignore, 0 TBD. Estimated adjacent spend $89/month across surveyed users. Dominant signal: capability gap.
+
+**Recommended next step.** Capability gaps dominate — users want something the product does not do — so the strongest near-term move is building one or two natively before a competitor does. Sequence the build column by frequency × strategic relevance. Confirm partner candidates with the external tools' partnership teams. Re-run this audit quarterly; workarounds shift fast.
+
+*Quarterly re-run is already owned in the audit cadence above, assigned to the DPO before this audit was run.*
