@@ -123,13 +123,18 @@ The rule underneath all four: no agent both decides and executes an irreversible
 
 | Tool | Owner | Risk Level | Decision |
 |------|-------|-----------|----------|
-| | | H / M / L | keep / govern / kill |
-| | | H / M / L | keep / govern / kill |
-| | | H / M / L | keep / govern / kill |
+| Consumer ChatGPT used to draft traveller apology and explanation messages | Head of Travel Ops | H | govern |
+| Unsanctioned Zapier + LLM automation summarising disruption tickets into Slack | Support lead | M | govern |
+| Personal-account prompt drafting EU261 entitlement responses to travellers | Individual CS agent | H | kill |
 
-**Total tools found:**
-**Tools after triage:**
-**Estimated hidden spend:**
+**Total tools found:** 7
 
+**Tools after triage:** 5 — 2 killed, 3 brought under governance, 2 already sanctioned
 
+**Estimated hidden spend:** $340/month
 
+Figures are illustrative, consistent with the fictional scenario.
+
+**Why the third is a kill and not a govern.** It produces regulated statements about compensation entitlements, with no audit trail, from an account the company cannot access. That is the same action the governance policy above classes as human-approval-only, happening entirely outside the policy.
+
+**The finding that matters beyond compliance.** Ops agents pasting itineraries into consumer chatbots is not only a GDPR exposure, it is a flywheel leak. The correction signal that should be feeding our golden dataset is being handed to a third party instead — the loop this module is about is being drained by the tools this section audits.
