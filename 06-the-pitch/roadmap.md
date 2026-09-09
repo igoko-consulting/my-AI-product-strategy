@@ -65,6 +65,33 @@
 
 **One caveat across the whole roadmap.** Several H1 and H2 items — autonomy instrumentation, second-opinion measurement, tiered pricing tests — assume a live product with traffic. If it is not live, they are not four-week items and the horizon spread is optimistic by a quarter.
 
+## AI Evaluation
+
+*Generated with the AI Bet Evaluator against all five strategy components, all eight dimensions selected. Caveat: run by the same assistant that helped build the strategy, so it is a self-evaluation and worth less than an independent one.*
+
+| Dimension | Score | Strengths | Gaps | Recommendation |
+|---|---|---|---|---|
+| Bet Validation | 2/5 | Four explicit falsifiable kill criteria, each tied to observable behaviour. Clear archetype and why-now | No user evidence of any kind. The central assumption that disruption handling is worth switching platform for is asserted, never tested. Validation speed unstated | Run the cheapest kill-criterion test first: a browse-time risk pill A/B measuring selection shift, which validates in weeks without building the copilot |
+| Capability Assessment | 2/5 | Cascading architecture specified and costed. Agent topology names what each component can and cannot do | The crux capability — holding inventory ahead of the airline's announcement — is assumed and evidenced nowhere. Counterfactual logging does not exist, so the predictor cannot be trained. 24/7 reviewers carried at $0.10 per trip-month understates a follow-the-sun rota | Treat the hold premise as a commercial dependency, not a technical one, and get written confirmation from one carrier before further build |
+| Impact Analysis | 3/5 | The 0.9% conversion-lift breakeven converts the whole investment case into one testable behavioural claim | No market sizing: trips, book of business, revenue at scale all absent. Opportunity cost never discussed. Compounding is half-broken by the strategy's own freeze test | Size the addressable book so the 0.9% lift can be expressed as money rather than a percentage |
+| Defensibility Check | 2/5 | Unusually honest: scores its own moat at 12/20, concedes feature-level not platform-level, names Google with a timeline and value at risk | Half the flywheel does not run. Switching costs never named. Workflow depth is shallow — a feature inside someone else's funnel, with a moat inherited from the host OTA | Build Network Intelligence, the route and carrier reliability index. The only asset that compounds across users and cannot be bought from a model vendor |
+| Pricing Alignment | 3/5 | The most rigorous section. Outcome-weighted hybrid matched to how value arrives, stress-tested at 3x, thresholds computed. Power-user question answered by separating monitoring intensity from disruption frequency | Zero willingness-to-pay evidence. $6.49 and $35.00 are both invented. The flat fee is regressive against trip value, noted and unresolved | Price-test the base fee against travel insurance at point of booking, where the comparison is already in the traveller's head |
+| Trust & Reliability | 4/5 | Strongest component. Genuine adversarial rows including prompt injection through ingested content. Contract with measurement methods, thresholds and consequences. Confidence tiered on the action rather than the prediction | 10 rows against a 150 target, so the contract runs far ahead of what exists. Nothing measured yet, so every target is a promise. The confidence percentage is uncalibrated because Outcome Calibration is broken | Do not ship the numeric confidence figure until calibration is measured. An uncalibrated percentage is worse than none |
+| Governance & Scale | 4/5 | Autonomy boundaries are decision-level, not tier-level. GDPR Article 22 correctly identified as the binding constraint rather than the EU AI Act. No agent both decides and executes an irreversible action. Shadow AI audit done as roadmap input, not security theatre | PSD2 SCA unexamined, and it threatens auto-rebook, the tier the revenue model depends on. The storm month is modelled for cost but not for reviewer load, so the human path fails when most needed | Resolve SCA before committing to auto-rebook. It is a binary blocker on the revenue-critical tier |
+| Gap Identification | 4/5 | Names its own weaknesses rather than hiding them: the $20 attribution, the missing peer red-team, the reversibility contradiction, the uncalibrated confidence figure | The weakest component is the Bet, and everything downstream is rigorous work built on an unvalidated premise | Stop deepening the downstream components. Every additional hour on contract and guardrails increases the sunk cost behind an untested bet |
+
+**Overall score: 3/5.** Rigour is high and evidence is absent. This is a well-engineered answer to a question nobody has yet confirmed is being asked, which is a better failure mode than the reverse, but it is still the position it is in.
+
+**Biggest risk.** The inventory-hold premise. The product rests on holding a seat or room before the airline announces the cancellation. If carriers will not permit that at scale, or price it punitively, the leader feature evaporates and every other component becomes scaffolding around a hole. This outranks Google encroachment because it is binary, near-term, and answerable in weeks.
+
+**Top three actions.**
+
+1. **Test the hold premise commercially.** One carrier, one hub, written confirmation. Weeks, not months, and the answer is binary.
+2. **Get switching and willingness-to-pay evidence from real travellers.** Fifteen interviews plus the browse-time risk-pill A/B. Two of the four kill criteria are testable this way without building the copilot.
+3. **Close Outcome Calibration.** Cheap, unblocks the confidence figure the trust model depends on, and it is the only loop that turns usage into a predictor a frontier release cannot hand a competitor for free.
+
+*All three actions appear in the roadmap above: actions 1 and 2 in Horizon 1, action 3 in Horizon 2.*
+
 ## Board Pitch
 
 **Thesis (1 sentence):**
