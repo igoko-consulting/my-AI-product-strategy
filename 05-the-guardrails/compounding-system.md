@@ -127,6 +127,8 @@ The rule underneath all four: no agent both decides and executes an irreversible
 | Unsanctioned Zapier + LLM automation summarising disruption tickets into Slack | Support lead | M | govern |
 | Personal-account prompt drafting EU261 entitlement responses to travellers | Individual CS agent | H | kill |
 
+The table lists the three highest-risk findings. Four further tools were found and are not itemised here: two already sanctioned, two low-risk and brought under the same governance route as row 2.
+
 **Total tools found:** 7
 
 **Tools after triage:** 5 — 2 killed, 3 brought under governance, 2 already sanctioned
