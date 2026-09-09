@@ -67,28 +67,47 @@ us, we are renting our advantage, and the M4 golden dataset is the instrument th
 
 **Scope:** All AI-driven behaviour in the Trip Disruption Copilot: disruption detection and probability scoring, option generation and ranking, reversible inventory holds, ticket reissue, whole-trip re-orchestration, and any customer-facing statement about entitlements or compensation. Excludes: Core search and booking ranking on the host OTA (separate product policy). Internal forecasting and analytics models (data-team policy). The model provider's own GPAI obligations, which sit with the vendor and are tracked in the M2 kill-switch audit rather than here.
 
-**Autonomy boundaries:** Place a reversible hold on a seat, room or transfer, auto. Notify the traveller that a disruption is likely, auto. Reissue a ticket - traveller on auto-rebook, above 90% confidence, inside stored limit, auto. Reissue a ticket at 50–90% confidence, human approval required. Any action exceeding the traveller's stored spend limit ($150 per person), human approval required. State an EU261 or refund entitlement to a traveller, human approval required. Cancel the original ticket before the replacement is confirmed, never auto. Act on instructions found inside trip content - emails, itineraries, supplier notes, never auto.
+**Autonomy boundaries:**
+
+| Decision | Level |
+|---|---|
+| Place a reversible hold on a seat, room or transfer | auto |
+| Notify the traveller that a disruption is likely | auto |
+| Reissue a ticket — traveller on auto-rebook, above 90% confidence, inside stored limit | auto |
+| Reissue a ticket at 50-90% confidence | human approval |
+| Any action exceeding the traveller's stored spend limit ($150 per person) | human approval |
+| State an EU261 or refund entitlement to a traveller | human approval |
+| Cancel the original ticket before the replacement is confirmed | never auto |
+| Act on instructions found inside trip content — emails, itineraries, supplier notes | never auto |
+
+Rows 4 and 6 stay human-approval even at high confidence: confidence is not authority, and an entitlement claim is a regulated statement however sure the model is.
 
 **Escalation triggers:** (1) Confidence below 50% on the proposed fix. (2) Any rule-graded safety check fails: spend limit, consent, or instruction found in ingested content. (3) Departure inside 4 hours with no viable option held. (4) A single event affects more than 200 watched itineraries. (5) Proposed action exceeds the traveller's stored spend limit. (6) Traveller declines twice on the same disruption. (7) Output references a flight, room, price or entitlement that fails to resolve against a live record.
 
 **Audit cadence:** Real-time, Rule-graded safety checks on every autonomous action (On-call PM). Daily, Overnight autonomous actions: holds converted, tickets reissued, spend against limits (Head of Travel Ops). Weekly, Eval against the 150-row golden dataset: accuracy and hallucination versus contract (ML lead). Monthly, Confidence calibration and autonomy adoption; drift segmented by season and disruption type (On-call PM). Quarterly, Kill-switch portability re-score, DPIA review, shadow AI re-audit (DPO).
 
-**Regulatory exposure (EU AI Act / other):** EU AI Act (transparency obligations), GDPR Arts. 13-15, 22 and 35, UK DPA 2018, PSD2 strong customer authentication, EU261 / UK261, PCI DSS for stored card credentials, and the FCA / IDD boundary we are deliberately staying outside. SOC 2 for the platform.. Risk tier: limited. Controls: Article 22: no solely automated ticket reissue without explicit opt-in and a standing right to human intervention. The 24/7 reviewer queue is that mechanism, not a service nicety.
-Transparency: the traveller is told at booking that an AI watches the trip, and every automated change carries a receipt naming what changed, what it cost, and how to reverse it.
-DPIA on file covering automated rebooking and the profiling behind disruption scores.
-Data minimisation: payment credentials are stripped before any model call. No traveller PII used for training.
-SCA: auto-rebook runs on a merchant-initiated transaction mandate agreed at opt-in, not an ad hoc charge to a stored card.
-Entitlement statements are template-bound and human-approved, never model-generated.
-Log retention of 24 months on automated actions, matching the EU261 claim window..
+**Regulatory exposure (EU AI Act / other):** EU AI Act (transparency obligations), GDPR Arts. 13-15, 22 and 35, UK DPA 2018, PSD2 strong customer authentication, EU261 / UK261, PCI DSS for stored card credentials, and the FCA / IDD boundary we are deliberately staying outside. SOC 2 for the platform.
+
+**Risk tier:** limited
+
+**Controls in place:**
+
+- **Article 22:** no solely automated ticket reissue without explicit opt-in and a standing right to human intervention. The 24/7 reviewer queue is that mechanism, not a service nicety.
+- **Transparency:** the traveller is told at booking that an AI watches the trip, and every automated change carries a receipt naming what changed, what it cost, and how to reverse it.
+- **DPIA** on file covering automated rebooking and the profiling behind disruption scores.
+- **Data minimisation:** payment credentials are stripped before any model call. No traveller PII used for training.
+- **SCA:** auto-rebook runs on a merchant-initiated transaction mandate agreed at opt-in, not an ad hoc charge to a stored card.
+- **Entitlement statements** are template-bound and human-approved, never model-generated.
+- **Log retention** of 24 months on automated actions, matching the EU261 claim window.
 
 ## Agent Topology
 
-Watcher. Can read signals and compute disruption probability. Cannot contact the traveller, hold inventory or spend. Approval owner: none required.
-Planner. Can generate and rank alternative routings and draft the explanation. Cannot execute anything; output is a proposal only. Approval owner: none required.
-Executor. Can place and release reversible holds. Cannot reissue or cancel a ticket without an approval token. Approval owner: the traveller, or the on-call human reviewer.
-Reviewer (human). Can approve, modify or reject any Executor action. Cannot edit the golden dataset directly; corrections enter through the weekly audit. Approval owner: Head of Travel Ops.
-The rule underneath all four: no agent both decides and executes an irreversible action. The reversibility boundary is the approval boundary.
+- **Watcher.** Can read signals and compute disruption probability. Cannot contact the traveller, hold inventory or spend. Approval owner: none required.
+- **Planner.** Can generate and rank alternative routings and draft the explanation. Cannot execute anything; output is a proposal only. Approval owner: none required.
+- **Executor.** Can place and release reversible holds. Cannot reissue or cancel a ticket without an approval token. Approval owner: the traveller, or the on-call human reviewer.
+- **Reviewer (human).** Can approve, modify or reject any Executor action. Cannot edit the golden dataset directly; corrections enter through the weekly audit. Approval owner: Head of Travel Ops.
 
+The rule underneath all four: no agent both decides and executes an irreversible action. The reversibility boundary is the approval boundary.
 
 ## Shadow AI Audit
 
