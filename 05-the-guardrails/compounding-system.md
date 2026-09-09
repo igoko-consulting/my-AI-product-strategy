@@ -129,9 +129,7 @@ The rule underneath all four: no agent both decides and executes an irreversible
 
 The table lists the three highest-risk findings. Four further tools were found and are not itemised here: two already sanctioned, two low-risk and brought under the same governance route as row 2.
 
-**Total tools found:** 7
-
-**Tools after triage:** 5 — 2 killed, 3 brought under governance, 2 already sanctioned
+**Audit result:** 7 tools found — 2 killed, 3 brought under governance, 2 already sanctioned. 5 remain in use.
 
 **Estimated hidden spend:** $340/month
 
