@@ -33,6 +33,7 @@ All financial and operational figures are modelled, not disclosed.
 - **Top Risk:** Platform encroachment via Google — Gmail trip parsing already exists, so a lightweight version is 6–12 months away, roughly 40% of value at risk. The M6 evaluation later named a larger near-term risk: carriers may not permit holding inventory ahead of their own cancellation announcement.
 - **Confidence:** M
 - **Prototype:** Built and demoable. A single-page interactive prototype covering search, AI-led refinement, ranked options with disruption-risk scoring, the autonomy/guardian setup, and a live disruption-to-rebooking flow. Not publicly linked while the idea is live — available on request, and shown on screen in interviews.
+- **Research:** Five [proxy interviews](01-the-bet/proxy-interviews.md) run against the prototype — family members role-playing target personas. Evidences comprehension, not demand. No actual disrupted traveller and no carrier has been asked anything.
 - **Kill Criteria:** autonomy is refused and most users stay on notify-only · the disruption-risk pill does not shift booking selection · held alternatives cannot be secured at scale or cost more than the delay avoided · users do not respond inside the hold window
 
 → Details: [`01-the-bet/`](01-the-bet/)
@@ -72,7 +73,7 @@ All financial and operational figures are modelled, not disclosed.
 **Why users will trust a probabilistic system.**
 
 - **Reliability Target:** 93% accuracy with a separate 100% gate on rule-graded safety rows · hallucination under 0.5% · under 2s p95 and 90s signal-to-hold · drift under 0.5%/wk
-- **Golden Dataset:** 10 rows at v1 against a 150-row target, 3 adversarial, 60% edge cases
+- **Golden Dataset:** 12 rows at v1 against a 150-row target, 3 adversarial, 67% edge cases
 - **Confidence UX:** Tiered on confidence in the *action*, not the prediction. Below 50%, no plan is presented at all.
 - **HITL Architecture:** Confidence below 50%, a safety flag, departure inside 4 hours with no option, a correlated event over 200 itineraries, or any action above the stored spend limit routes to a 24/7 travel-ops reviewer whose corrections become golden rows.
 - **Failure Mode Coverage:** 5 coverage gaps logged and 2 red-team findings, including a product claim the system cannot keep — "all reversible" stops being true once a ticket is reissued.
