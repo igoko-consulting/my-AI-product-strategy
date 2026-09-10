@@ -10,7 +10,7 @@ Claude Code: Hand-built single-file HTML/CSS/JS, no framework.
 
 ## Prototype Link
 <!-- Paste the shareable URL -->
-https://claude.ai/code/artifact/61b922f7-67c9-4371-b934-31f31f0e4c96
+Built and demoable. A single-page interactive prototype covering search, AI-led refinement, ranked options with disruption-risk scoring, the autonomy/guardian setup, and a live disruption-to-rebooking flow. Not publicly linked while the idea is live — available on request, and shown on screen in interviews.
 
 ## AI Value Archetype
 <!-- Automator / Copilot / Oracle / Creator / Orchestrator -->

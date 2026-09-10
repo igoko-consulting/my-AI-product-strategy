@@ -32,7 +32,7 @@ All financial and operational figures are modelled, not disclosed.
 - **Vulnerability Scores:** Moat 3/5 · Data 4/5 · Platform 3/5
 - **Top Risk:** Platform encroachment via Google — Gmail trip parsing already exists, so a lightweight version is 6–12 months away, roughly 40% of value at risk. The M6 evaluation later named a larger near-term risk: carriers may not permit holding inventory ahead of their own cancellation announcement.
 - **Confidence:** M
-- **Prototype:** [Trip Disruption Copilot](https://claude.ai/code/artifact/61b922f7-67c9-4371-b934-31f31f0e4c96)
+- **Prototype:** Built and demoable. A single-page interactive prototype covering search, AI-led refinement, ranked options with disruption-risk scoring, the autonomy/guardian setup, and a live disruption-to-rebooking flow. Not publicly linked while the idea is live — available on request, and shown on screen in interviews.
 - **Kill Criteria:** autonomy is refused and most users stay on notify-only · the disruption-risk pill does not shift booking selection · held alternatives cannot be secured at scale or cost more than the delay avoided · users do not respond inside the hold window
 
 → Details: [`01-the-bet/`](01-the-bet/)
