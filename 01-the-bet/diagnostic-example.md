@@ -1,4 +1,6 @@
-# Three-Axis Vulnerability Diagnostic
+# Three-Axis Vulnerability Diagnostic — Worked Example
+
+*Reference only. This applies the diagnostic to Miro, drawing on prior direct experience, as a calibration check on the scoring. The live assignment is [diagnostic.md](diagnostic.md), which covers Trip Disruption Copilot.*
 
 ## Product
 <!-- Name the product you're diagnosing. Real product at your company — not a hypothetical. -->

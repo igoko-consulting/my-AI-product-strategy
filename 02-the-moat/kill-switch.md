@@ -6,12 +6,12 @@
 | **Provider** | Single provider (Anthropic Claude), no fallback configured | H | This week: stand up a second provider account and route 5% of traffic to it as a live fallback test |
 | **Abstraction** | Prompts and tool-calling hardcoded to Claude's API format, not behind a vendor-agnostic layer | H | This month: migrate calls behind a routing/abstraction layer (e.g. LiteLLM) so a provider swap is a config change, not a rewrite |
 | **Routing** | No routing layer, all requests go direct to one provider, no automatic failover | H | This quarter: build failover logic that reroutes traffic on outage, latency spike, or pricing change, not just manual switch |
-| **Eval** | No formal eval set, quality checked ad hoc during development | H | This week: build a golden set of disruption scenarios with known-good rebooking outputs, so any swap can be scored before rollout |
+| **Eval** | Golden set built in M4: 10 rows against a 150-row v1 target, with a reliability contract defining pass thresholds | M | Delivered. Remaining work is volume, not existence: expand to 150 rows so a provider swap can be scored with confidence rather than indicatively |
 
-*Three actions, staged: this week (eval set + fallback provider test), this month (abstraction layer), this quarter (automatic routing/failover). Eval comes first since nothing else is safe to ship without a way to check it didn't degrade quality.*
+*Three actions, staged: this week (eval set + fallback provider test), this month (abstraction layer), this quarter (automatic routing/failover). Eval comes first since nothing else is safe to ship without a way to check it didn't degrade quality. **Status: the eval set landed in M4**, which drops that row from H to M and makes the abstraction layer the binding constraint.*
 
 ## Portability Score
-Locked. All four dimensions are high risk today. Target after the three actions land: Partial this quarter, Ready once failover routing is live and tested under real traffic.
+Locked. Three of four dimensions remain high risk; the eval dimension dropped to medium once the M4 golden set landed. Target after the three actions land: Partial this quarter, Ready once failover routing is live and tested under real traffic.
 
 ## If Anthropic (Claude) doubles pricing tomorrow:
 Today: no real 48-hour response, we absorb the cost while emergency-wrapping the API calls behind an abstraction layer under pressure, worst time to do it.
