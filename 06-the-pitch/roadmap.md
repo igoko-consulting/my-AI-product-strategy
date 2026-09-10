@@ -94,19 +94,41 @@
 
 ## Board Pitch
 
+*Audience: internal leadership team. CEO, peer VPs, direct manager, allocating limited investment across the company portfolio.*
+
 **Thesis (1 sentence):**
+For leisure travellers, we turn the worst moment of a trip into the reason they book with us again, by fixing disruption before they know it has happened.
 
 **The case:**
-1. Why now:
-2. What's defensible:
-3. The economics:
+
+1. **Why now:** Three things changed inside the last year. Airline and hotel inventory APIs now let us hold a replacement seat or room *before* the carrier announces the cancellation, which is the difference between a fix and a notification. Watching every booked trip continuously now costs $1.80 per active trip-month against the roughly $200 commission that trip already earns, so the economics work at a scale that would have been prohibitive two years ago. And Google shipped trip parsing in Gmail, which tells us the alerting half of this will exist whether we build it or not.
+
+2. **What's defensible:** Not the alerting. Google can take that, and roughly 40% of the value sits there. What they cannot take is execution: moving a booking means holding inventory, taking payment and reissuing the ticket, and that routes through us. Underneath it, every disruption we resolve adds to a cross-airline record of what actually works, which no model vendor has. We score that flywheel at 12 out of 20, which is honest rather than flattering — the personalisation and correction loops run, the network loop does not yet.
+
+3. **The economics:** $1.80 total cost per active trip-month against ~$200 of commission, at 91% gross margin, holding 58.5% through a correlated storm month when every affected traveller escalates at once. The break-even is the number that matters: this pays for itself on a **0.9% lift** in conversion or repeat booking. Cost is not the risk — 94% of requests stay off the expensive model, and blended cost per request can rise 7.7x before margin reaches 40%.
 
 **The risks:**
-1. Trust / failure modes:
-2. Scale / governance:
-3. Competitive:
+
+1. **Trust / failure modes:** The scenario that reaches the press is not a missed alert. It is cancelling a family's ticket for a flight that then departs normally. The architecture makes that impossible rather than unlikely: cancelling an original booking before its replacement is confirmed is never automatic at any confidence level, safety checks on spend and consent are gated at 100% rather than averaged into an accuracy score, and anything below 50% confidence goes to a human. One honest gap: our product copy promises every action is reversible, and that stops being true once a ticket is reissued. We found it in self-review and it is fixed in the first four weeks.
+
+2. **Scale / governance:** Inference cost is not what breaks at 10x. Two things are. The human reviewer rota is carried at $0.10 per trip-month, which almost certainly understates a 24/7 operation, and a storm month sends the whole affected cohort to that queue at once. Separately, automated rebooking is a decision with legal effect under GDPR, so a human intervention path is mandatory rather than optional, and we have not resolved whether charging an absent traveller's card satisfies European payment authentication rules. That last one could remove the fully automatic tier entirely.
+
+3. **Competitive:** The scenario that forces a kill is not Google. It is carriers declining to let anyone hold inventory ahead of their own cancellation announcement, or pricing it punitively. That single unverified premise sits underneath the entire product. Kill criteria are set: if no carrier permits a pre-announcement hold by week 4, we stop. If showing disruption risk at browse time does not shift booking selection by 3 percentage points by week 6, the browse-time half of the value is imagined and comes out.
 
 **The ask:**
+$250,000 as a budget shift with no new headcount: 3 engineers, 1 PM, 0.5 design, plus 0.2 of a commercial partner manager, for 14 weeks to a Go/No-Go.
+
+That buys a binary answer on the commercial premise, real evidence on whether travellers will switch and what they will pay, and a disruption predictor that learns from its own outcomes. **We are not asking to build the product. We are asking for one quarter to find out whether it can be built**, with a hard stop at week 4 if the carrier answer is no, at which point roughly two thirds of the budget is unspent and returns.
+
+What gets paused if this is funded: within this bet, the four exploratory items — reliability index, own ranking model, provider failover, claims partnership — all wait, and the travel-admin export is cut outright as scope drift. What this strategy cannot tell you is which *other* company bet the 4.5 people come from. That trade-off is not in the strategy and it is a portfolio decision, not one to assume here.
+
+### Presenter notes
+
+**Opening line, say this first.** "This is a retention bet, not an AI bet. It is the one thing in our funnel a price comparison cannot copy, and it costs $1.80 a trip to find out if it works."
+
+**If you only get 60 seconds.** We fix travel disruption before the traveller notices, which is the one moment in a trip where we earn a rebooking rather than a price comparison. The whole thing rests on one unverified premise — whether a carrier will let us hold a seat before they announce the cancellation — and nobody has asked one yet. $250,000 and 4.5 reallocated people for 14 weeks to get that answer, hard stop at week 4.
+
+**The question they ask first.** "You have a full strategy, a pricing model and a reliability contract, and you are now asking for a quarter to find out whether the core premise is even possible. Why was that not the first thing you did?" Answer: the strategy is what identified which question mattered most, and it cost four weeks rather than a year of engineering. The alternative was finding this out after we had built it.
 
 ## M1 Baseline vs. Now
 *Your 3-sentence AI strategy from Module 1 vs. what you'd say now:*
