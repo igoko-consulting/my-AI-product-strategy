@@ -102,7 +102,7 @@ All financial and operational figures are modelled, not disclosed.
 
 - **Horizon 1 (Now, 0–4 weeks):** 8 items. Traveller interviews, the carrier hold agreement, peer red-team, suppress the uncalibrated confidence figure, fix the reversibility copy, cost the 24/7 rota, golden dataset to 150 rows, instrument autonomy adoption.
 - **Horizon 2 (Next, 1–3 months):** 7 items, each with kill criteria. Browse-time risk pill A/B, counterfactual outcome logging, PSD2 SCA resolution, vendor abstraction layer, visible reasoning on rebooking options, tiered base fee, risk scoring for itineraries we did not sell.
-- **Horizon 3 (Bet, 3–6 months):** 5 items. Reliability index, own ranking model, provider failover, EU261 claims partnership, and a travel-admin export flagged as scope drift and a candidate to cut.
+- **Horizon 3 (Bet, 3–6 months):** 4 items. Reliability index, own ranking model, provider failover, EU261 claims partnership. A fifth, a travel-admin export, was cut as scope drift — it served a buyer the Bet does not claim.
 - **Board Narrative:** For leisure travellers, we turn the worst moment of a trip into the reason they book with us again, by fixing disruption before they know it has happened.
 - **Key Metric:** Autonomy-setting adoption after a traveller's first successful save. Notify-only users generate no billable outcome, so this single number decides whether the revenue model works.
 - **The Ask:** $250,000 as a budget shift, 4.5 reallocated people, 14 weeks to a Go/No-Go, hard stop at week 4 on the carrier answer.

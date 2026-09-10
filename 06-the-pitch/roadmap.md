@@ -32,7 +32,7 @@
 | Extend disruption risk scoring to itineraries we did not sell | Bet | The workaround travellers already run manually is an acquisition wedge, not just a feature | If it does not produce qualified booking sessions by week 10, it is a feature and we stop funding it as growth | L |
 
 ### Horizon 3 — Explore (3-6 months)
-*Low confidence. Small-investment experiments.*
+*Low confidence. Small-investment experiments. Four items — a fifth, the travel-admin export, was cut. See the decision below.*
 
 | Initiative | Strategy Component | What must be true first | Confidence |
 |---|---|---|---|
@@ -40,19 +40,24 @@
 | Train our own option-ranking model on accept and reject data | Moat | Meaningful accept and reject volume, which requires the product to be live at scale | L |
 | Automatic failover routing across model providers on outage or latency or price change | Moat | Abstraction layer shipped and validated against the golden set | M |
 | EU261 claims partnership with a specialist provider rather than building it | Guardrails | Partner discovery done, and the regulatory boundary confirmed with counsel | L |
-| Disruption and spend export for travel admins | Bet | That a business-travel buyer exists for us at all, which the strategy does not currently claim | L |
 
-### Unmapped (cut or rethink)
+### Unmapped — decided and cut
 
-| Initiative | Why it's unmapped | Recommendation |
+| Initiative | Why it was unmapped | Decision |
 |---|---|---|
-| Disruption and spend export for travel admins | Held in H3 above under the original mapping, but the Bet names leisure travellers on an OTA. This serves a business-travel buyer no component supports | Rethink as a separate bet with its own validation, or cut |
+| Disruption and spend export for travel admins | The Bet names leisure travellers on an OTA. This served a business-travel buyer that no strategy component supports | **Cut.** Not deferred, not parked. |
+
+**Rationale.** Nineteen of twenty initiatives trace to a component. This one traced to a buyer the strategy has never claimed, which makes it scope drift rather than a small bet. Keeping it in Horizon 3 would have funded a second, unvalidated buyer segment before the first one has been tested with a single real traveller or carrier — and the honest read of this strategy is that it cannot afford one unvalidated bet, let alone two.
+
+Cutting it is also the cheaper reversal. If travel admins turn out to matter, they come back as their own bet with their own kill criteria, rather than as a line item inheriting justification from a leisure-traveller strategy that was never about them.
+
+Recorded rather than deleted, because a backlog that shows what was cut and why is more useful than one that only shows what survived.
 
 ### Mapping Disagreements
 
 | Initiative | Mapped to | Would map to | Why |
 |---|---|---|---|
-| Disruption and spend export for travel admins | Bet | Unmapped | The Bet is explicit about leisure travellers, so this is scope drift into a different buyer rather than an expression of the stated bet |
+| Disruption and spend export for travel admins | Bet | Unmapped | The Bet is explicit about leisure travellers, so this was scope drift into a different buyer rather than an expression of the stated bet. **Resolved in favour of Unmapped, and the initiative cut.** |
 | Staff and cost a 24/7 travel-ops reviewer rota | Guardrails | Margin | The action is correcting a COGS line that understates a follow-the-sun rota at $0.10 per trip-month; the policy question was already settled in Guardrails |
 
 ### Reading the spread
@@ -61,7 +66,7 @@
 
 **The H3 bet to protect if budget is cut.** The carrier and hub reliability index. It is the only asset that compounds across users and cannot be handed to a competitor by the next frontier release.
 
-**The one initiative to kill today.** The travel-admin export. It serves a buyer the strategy does not claim, and funding it before the leisure bet is validated is the clearest scope drift in the backlog.
+**The one initiative to kill today.** The travel-admin export — since acted on and cut. It served a buyer the strategy does not claim, and funding it before the leisure bet is validated was the clearest scope drift in the backlog.
 
 **One caveat across the whole roadmap.** Several H1 and H2 items — autonomy instrumentation, second-opinion measurement, tiered pricing tests — assume a live product with traffic. If it is not live, they are not four-week items and the horizon spread is optimistic by a quarter.
 

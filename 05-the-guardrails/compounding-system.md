@@ -148,7 +148,7 @@ Columns follow the audit tool: Owner is the signal source, Risk Level is frequen
 
 ### Action plan
 
-**Build.** Row 2 first: travellers seeking a second opinion on our own recommendation is a trust gap we created, and the Confidence UX work is already half the fix. Then row 1, extending disruption risk scoring to itineraries we did not sell — the workaround is proof of demand and doubles as an acquisition wedge. Row 4 last: a disruption and spend export for travel admins, a segment the product currently ignores entirely.
+**Build.** Row 2 first: travellers seeking a second opinion on our own recommendation is a trust gap we created, and the Confidence UX work is already half the fix. Then row 1, extending disruption risk scoring to itineraries we did not sell — the workaround is proof of demand and doubles as an acquisition wedge. Row 4 was a disruption and spend export for travel admins. **Since cut** — the workaround is real, but it belongs to a business-travel buyer the Bet does not claim, so it returns as its own bet or not at all. See the roadmap's Unmapped decision.
 
 **Partner.** Row 3, EU261 claims, with a specialist provider rather than building. Our disruption record hands off the evidence pack; they own the claim and the regulated advice. Building it ourselves crosses the FCA and IDD boundary M3 deliberately stays outside, and EU261 accuracy is already logged as an M4 coverage gap.
 
