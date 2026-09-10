@@ -15,7 +15,7 @@
 | Align the all-reversible product copy with fare-rule reality once a ticket is reissued | Contract | Copy plus a commercial fact-check. The current claim is one the airline does not honour | H |
 | Secure written carrier agreement to hold seats ahead of a cancellation announcement at one hub | Bet | A signed contract may take longer, but a yes-or-no answer is a four-week conversation | M |
 | Staff and cost a 24/7 travel-ops reviewer rota | Guardrails | A costing exercise, not a hiring round. The current $0.10 per trip-month is almost certainly wrong | H |
-| Expand golden dataset from 10 rows to the 150-row v1 target | Contract | Authoring work with a known format and no external dependency | M |
+| Expand golden dataset from 12 rows to the 150-row v1 target | Contract | Authoring work with a known format and no external dependency | M |
 | Instrument autonomy-setting adoption after a traveller's first successful save | Margin | Small analytics change, and it is the metric the whole revenue model rests on | M |
 
 ### Horizon 2 — Validate (1-3 months)
@@ -67,7 +67,7 @@
 
 ## AI Evaluation
 
-*Generated with the AI Bet Evaluator against all five strategy components, all eight dimensions selected. Caveat: run by the same assistant that helped build the strategy, so it is a self-evaluation and worth less than an independent one.*
+*Generated with the AI Bet Evaluator against all five strategy components, all eight dimensions selected. Caveat: run by the same assistant that helped build the strategy, so it is a self-evaluation and worth less than an independent one. Run when the golden dataset held 10 rows; two have since been added — see M4.*
 
 | Dimension | Score | Strengths | Gaps | Recommendation |
 |---|---|---|---|---|

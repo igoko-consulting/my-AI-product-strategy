@@ -76,7 +76,7 @@ All financial and operational figures are modelled, not disclosed.
 - **Golden Dataset:** 12 rows at v1 against a 150-row target, 3 adversarial, 67% edge cases
 - **Confidence UX:** Tiered on confidence in the *action*, not the prediction. Below 50%, no plan is presented at all.
 - **HITL Architecture:** Confidence below 50%, a safety flag, departure inside 4 hours with no option, a correlated event over 200 itineraries, or any action above the stored spend limit routes to a 24/7 travel-ops reviewer whose corrections become golden rows.
-- **Failure Mode Coverage:** 5 coverage gaps logged and 2 red-team findings, including a product claim the system cannot keep — "all reversible" stops being true once a ticket is reissued.
+- **Failure Mode Coverage:** 7 coverage gaps and open questions logged, plus 2 red-team findings, including a product claim the system cannot keep — "all reversible" stops being true once a ticket is reissued.
 
 → Details: [`04-the-contract/`](04-the-contract/)
 

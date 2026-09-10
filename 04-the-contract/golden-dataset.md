@@ -39,7 +39,7 @@ Dataset health
 
 ![Golden Dataset Builder run](golden-dataset-builder.png)
 
-*Golden Dataset Builder, Module 4: 10 test cases, 6 edge cases (60%), 3 adversarial, judge mix 30% rule / 30% LLM / 40% both.*
+*Golden Dataset Builder, Module 4, original run: 10 test cases, 6 edge cases (60%), 3 adversarial, judge mix 30% rule / 30% LLM / 40% both.*
 
 ## Confidence UX Design
 
