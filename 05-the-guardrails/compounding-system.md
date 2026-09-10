@@ -140,7 +140,7 @@ Columns follow the audit tool: Owner is the signal source, Risk Level is frequen
 
 **Total tools found:** 6 workarounds
 
-**Tools after triage:** 3 build candidates, 1 partner, 2 ignore and monitor
+**Tools after triage:** 2 build candidates, 1 partner, 2 ignore and monitor, 1 cut (the travel-admin export — see the roadmap's Unmapped decision)
 
 **Estimated hidden spend:** $89/month adjacent spend across surveyed users. Illustrative.
 
@@ -156,7 +156,7 @@ Columns follow the audit tool: Owner is the signal source, Risk Level is frequen
 
 ### Roadmap Brief
 
-6 user-side workarounds discovered. Decisions: 3 build, 1 partner, 2 ignore, 0 TBD. Estimated adjacent spend $89/month across surveyed users. Dominant signal: capability gap.
+6 user-side workarounds discovered. Decisions: 3 build, 1 partner, 2 ignore, 0 TBD. *(Builder output as generated. One of the three build candidates, the travel-admin export, has since been cut.)* Estimated adjacent spend $89/month across surveyed users. Dominant signal: capability gap.
 
 **Recommended next step.** Capability gaps dominate — users want something the product does not do — so the strongest near-term move is building one or two natively before a competitor does. Sequence the build column by frequency × strategic relevance. Confirm partner candidates with the external tools' partnership teams. Re-run this audit quarterly; workarounds shift fast.
 

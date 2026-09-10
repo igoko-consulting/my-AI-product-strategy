@@ -88,7 +88,7 @@ All financial and operational figures are modelled, not disclosed.
 
 - **Compounding System:** 4 loops. Recursive Learning and Cross-Domain Transfer active; Outcome Calibration broken; Network Intelligence missing. Under a 3-month model freeze the product barely improves, which is the honest read on where the advantage currently comes from.
 - **Governance Posture:** 8 autonomy decisions split across auto, human-approval and never-auto. Entitlement statements and mid-confidence ticket reissues stay human-approved regardless of model confidence.
-- **Shadow AI Status:** 6 user-side workarounds found, 6 triaged — 3 build, 1 partner, 2 ignore. $89/month adjacent spend. Dominant signal: capability gap.
+- **Shadow AI Status:** 6 user-side workarounds found, 6 triaged — 2 build, 1 partner, 2 ignore, 1 cut. $89/month adjacent spend. Dominant signal: capability gap.
 - **Agent Boundaries:** Watcher, Planner, Executor, human Reviewer. No agent both decides and executes an irreversible action.
 - **Regulatory Exposure:** GDPR Article 22 is the binding constraint on auto-rebook · EU AI Act limited-risk, transparency obligations · PSD2 strong customer authentication unresolved and capable of removing the automatic tier.
 
