@@ -133,6 +133,6 @@ What gets paused if this is funded: within this bet, the four exploratory items 
 ## M1 Baseline vs. Now
 *Your 3-sentence AI strategy from Module 1 vs. what you'd say now:*
 
-**M1 baseline:**
+**M1 baseline:** "We should use AI to help travellers when flights get cancelled, because it's a clear pain point and we have the booking data to do it well."
 
-**Now:**
+**Now:** I first saw this as a volume play: modest economics across a large booking base adding up. I now think in active trip-months: $1.80 of cost on every watched trip against metered revenue on only 3.6% of them, which is why the pricing became a base fee for the watching plus an outcome fee for the fix, rather than either alone. I had the risk wrong. I named Google and worried about legacy systems and the quality of carrier feeds, but the binding risk is commercial: whether a carrier will let us hold a seat before they announce a cancellation, and nobody has asked a carrier yet. I had the moat wrong too: I assumed the large travel players could copy this and restrict access, and they probably can copy the alerting, but what cannot be copied is execution: holding inventory, taking payment and reissuing the ticket, along with the record of what actually worked, which no model vendor has. The dependency on external models turned out to be real but addressable: the freeze test shows the product barely improves without updates, which is precisely why training our own ranking model on accept and reject data sits in Horizon 3. The change I did not expect is about evidence: I opened with "we have the booking data to do it well", but five modules later the weakest part of this strategy is that no traveller and no carrier has been asked anything at all.
