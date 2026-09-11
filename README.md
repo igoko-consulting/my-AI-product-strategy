@@ -21,7 +21,7 @@ Financial and operational figures are modelled rather than disclosed, for the co
 | **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [x] | `06-the-pitch/` |
 
-**Self-evaluation: 3/5.** Rigour is high, evidence is absent. Trust, governance and gap identification score 4/5; bet validation and capability score 2/5 because no traveller and no carrier has been asked yet. Full scoring in [`06-the-pitch/roadmap.md`](06-the-pitch/roadmap.md).
+**Self-evaluation: 3/5.** Rigour is high, evidence is absent. Trust, governance and gap identification score 4/5; bet validation and capability score 2/5 because no actual disrupted traveller and no carrier has been asked. Five [proxy sessions](01-the-bet/proxy-interviews.md) evidence comprehension, not demand. Full scoring in [`06-the-pitch/roadmap.md`](06-the-pitch/roadmap.md).
 
 ---
 
@@ -108,5 +108,6 @@ Financial and operational figures are modelled rather than disclosed, for the co
 - **Board Narrative:** For leisure travellers, we turn the worst moment of a trip into the reason they book with us again, by fixing disruption before they know it has happened.
 - **Key Metric:** Autonomy-setting adoption after a traveller's first successful save. Notify-only users generate no billable outcome, so this single number decides whether the revenue model works.
 - **The Ask:** $250,000 as a budget shift, 4.5 reallocated people, 14 weeks to a Go/No-Go, hard stop at week 4 on the carrier answer.
+- **Presentation:** [`final-presentation.html`](final-presentation.html) — the board pitch as a scrollable deck. Open it [rendered](https://htmlpreview.github.io/?https://github.com/igoko-consulting/my-AI-product-strategy/blob/main/final-presentation.html), since GitHub serves HTML as source.
 
 → Details: [`06-the-pitch/`](06-the-pitch/)
