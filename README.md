@@ -4,7 +4,9 @@
 
 **Product: Trip Disruption Copilot.** An AI copilot inside a travel booking platform that watches a booked trip, detects flight and hotel disruption before the airline announces it, holds the alternative, and rebooks on one tap.
 
-All financial and operational figures are modelled, not disclosed.
+**On the product choice.** I work as a fractional product leader, so there is no single employer's live roadmap for me to bring. Trip Disruption Copilot is a product idea drawn from the domain I have shipped in, across senior product roles at Booking.com, Expedia and others. The customer segments, the disruption problem and the commission economics are common to several of those organisations, so the bet is framed at industry level rather than tied to one operator, and it would be a live decision at more than one of them.
+
+Financial and operational figures are modelled rather than disclosed, for the confidentiality reasons that apply across all of those organisations. Every figure is labelled as such where it appears. The three-axis diagnostic in [`01-the-bet/diagnostic.md`](01-the-bet/diagnostic.md) records the same grounding.
 
 ---
 
