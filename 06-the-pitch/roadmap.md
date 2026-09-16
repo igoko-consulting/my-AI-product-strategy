@@ -4,6 +4,8 @@
 
 *Horizons follow the AI-compressed cadence from the Roadmap Builder, not calendar quarters: Ship 0-4 weeks, Validate 1-3 months, Explore 3-6 months.*
 
+*Where the backlog came from. There is no Jira to export from on a fractional engagement, so the twenty initiatives were assembled from the findings of the five earlier modules rather than an existing ticket queue: the vulnerability diagnostic and kill-switch actions, the broken and missing flywheel loops, the pricing and calibration gaps, the golden dataset and reliability contract, and the build candidates from the user-side shadow AI audit. Each traces back to a specific finding, which is why nineteen of twenty mapped to a strategy component and the one that did not was cut.*
+
 ### Horizon 1 — Ship (0-4 weeks)
 *High confidence. Ship with existing capabilities.*
 
