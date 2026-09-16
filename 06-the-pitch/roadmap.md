@@ -97,6 +97,8 @@ Recorded rather than deleted, because a backlog that shows what was cut and why 
 
 *All three actions appear in the roadmap above: actions 1 and 2 in Horizon 1, action 3 in Horizon 2.*
 
+**My take on this evaluation.** I accept most of it. The two 2/5 scores are fair, and the biggest risk is correctly identified. One line I'd push back on. "A question nobody has yet confirmed is being asked" mixes up the problem with the solution. The problem already has evidence behind it: EU261 exists because disruption is systemic, and the shadow AI audit found six workarounds travellers already run by hand. What's actually unvalidated is narrower and sharper: whether disruption is painful enough to make someone switch booking platform, and whether a carrier will allow a hold before they announce a cancellation. Both are answerable inside the quarter the roadmap asks for. That's exactly why the roadmap asks for it.
+
 ## Board Pitch
 
 *Audience: internal leadership team. CEO, peer VPs, direct manager, allocating limited investment across the company portfolio.*
