@@ -21,7 +21,7 @@ Financial and operational figures are modelled rather than disclosed, for the co
 | **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [x] | `06-the-pitch/` |
 
-**Self-evaluation: 3/5.** Rigour is high, evidence is absent. Trust, governance and gap identification score 4/5; bet validation and capability score 2/5 because no actual disrupted traveller and no carrier has been asked. Five [proxy sessions](01-the-bet/proxy-interviews.md) evidence comprehension, not demand. Full scoring in [`06-the-pitch/roadmap.md`](06-the-pitch/roadmap.md).
+**Self-evaluation: 3/5.** Rigour is high, evidence is absent. Trust, governance and gap identification score 4/5; bet validation and capability score 2/5 because no actual disrupted traveller and no carrier has been asked. Five [proxy sessions](01-the-bet/proxy-interviews.md) evidence comprehension, not demand. Full scoring in [`06-the-pitch/roadmap.md`](06-the-pitch/roadmap.md), including where I push back on it.
 
 ---
 
